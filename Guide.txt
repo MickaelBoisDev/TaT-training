@@ -1,0 +1,52 @@
+Application suivant l'interface de la maquette : 
+
+Django + VueJs +  FFmpeg 
+Outils utilisé : Vs Code + Eslint / Prettier 
+
+État actuel de l'application : 
+
+fonctionnalitées présentes : 
+- Conversion via drag and drop / FFmpeg 
+    - path : 
+        -./media/
+        -./converted_medias/ 
+- CRUD => model => media via l'admin panel de Django Admin
+- Liste des historiques
+- Suppression de un ou tous les historiques
+- SideBar avec Composents dinamyque 
+- Serializer Model => media
+
+
+Ce qu'il reste à faire : 
+-   Ajouter un name via Input pour la conversion
+-   Finir la fonctionnalité de download
+-   Connexion / Gestion Token / Headers
+-   Optimisation du code
+-   Création interface => media
+-   refetch data après upload
+
+
+------------------------------------------
+
+Guide : 
+
+Développeur : 
+- python manage.py runserver 0.0.0.0:99 => Django => http://localhost:99/
+- Djang admin => http://localhost:99/admin/
+- VueJs :
+        - npm install
+        - npm run dev  => http://127.0.0.1:5173/
+
+Router => http://127.0.0.1:5173/ 
+          http://127.0.0.1:5173/conversion
+          http://127.0.0.1:5173/history  
+
+- dev mode : CORS / Token / Utilisateurs Désactivé
+
+
+Utilisateurs : 
+-Drag and drop ou cliquez sur la fénêtre afin d'upload votre image à convertir
+-Après conversion, l'image apparaît dans votre historique ayant comme informations:
+-Média / Name / Conversion / Date / Actions possible 
+
+Il est possible Supprimer un ou tous les historiques

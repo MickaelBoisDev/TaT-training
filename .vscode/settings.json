@@ -1,0 +1,11 @@
+{
+    "python.linting.pylamaEnabled": true,
+    "python.linting.enabled": true,
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "Script/**": true,
+        "Lib/**": true,
+        "share/**": true
+    },
+}

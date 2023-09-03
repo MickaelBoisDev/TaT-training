@@ -1,0 +1,27 @@
+"""
+WSGI config for renderstats project.
+
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
+"""
+
+import os
+
+from channels.auth import AuthMiddlewareStack
+from channels.routing import ProtocolTypeRouter, URLRouter
+from django.core.asgi import get_asgi_application
+
+from ws.routing import channel_routing
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings.dev')
+
+application = ProtocolTypeRouter({
+    "http": get_asgi_application(),
+    "websocket": AuthMiddlewareStack(
+        URLRouter(
+            channel_routing
+        )
+    ),
+})
